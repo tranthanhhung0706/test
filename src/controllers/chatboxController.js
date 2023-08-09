@@ -1,4 +1,5 @@
 require("dotenv").config();
+import request from "request";
 const MY_VERIFY_TOKEN=process.env.MY_VERIFY_TOKEN;
 class ZingController {
     test = (req, res) => {
