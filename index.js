@@ -1,13 +1,13 @@
-const path = require('path')
+//const path = require('path')
 const express = require("express")
 require('dotenv').config()
 const app = express()
-const cors = require("cors")
+//const cors = require("cors")
 const port = process.env.PORT || 3000
 
 // Page Home
 app.get("/", (req, res) => {
-    res.send('SERVER ON')
+    res.send('SERVER ON1')
 })
 
 
