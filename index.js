@@ -1,17 +1,16 @@
-//const path = require('path')
-const express = require("express")
-require('dotenv').config()
-const app = express()
-//const cors = require("cors")
-const port = process.env.PORT || 3000
+require("dotenv").config();
+import express from "express";
+import bodyParser  from "body-parser";
+import viewEngine from "./config/viewEngine";
+import initWebRoutes from "./routes/web";
 
-// Page Home
-app.get("/", (req, res) => {
-    res.send('SERVER ON1')
-})
+let app=express();
+viewEngine(app);
 
-
-
-app.listen(port, () => {
-    console.log(`Start server listen at http://localhost:${port}`)
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:true}));
+initWebRoutes(app);
+let port =process.env.PORT;
+app.listen(port,()=>{
+    console.log("Connect to port 5000");
 });
