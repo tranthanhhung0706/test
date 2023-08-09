@@ -10,6 +10,7 @@ router.get("/hung1",(req,res)=>{
     console.log("hung")
     return res.send("Hello word");
 });
-router.get("/webhook",ZingController.test);
-
+router.get("/webhook1",ZingController.test);
+router.get("/webhook",ZingController.getWebhook);
+router.get("/webhook",ZingController.postWebhook);
 module.exports = router
