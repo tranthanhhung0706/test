@@ -1,13 +1,14 @@
 require("dotenv").config();
 const request = require('request');
 const MY_VERIFY_TOKEN = process.env.MY_VERIFY_TOKEN;
+const PAGE_ACCESS_TOKEN="EAALWWGROVNUBOwNpbMQWVpZCqrO7O22z8nZAeZCBPpAONNKiPy5prvSEF5Lpp3EobgYIIOrEc7IEJDWMnioivZCtuJikiuYOKDoVHhSHdlQdKPNeARlLkibi7tU6HJQwCs6SRAnT6zjyZB6ZCIDEU2ROBapKB9S1LkTQ93sgcFSZADnWktpPRkXsmEjDJ5p";
 class ZingController {
     test = (req, res) => {
         console.log("hung");
         return res.send("Hello again2");
     }
     getWebhook = (req, res) => {
-        let VERIFY_TOKEN = MY_VERIFY_TOKEN;
+        let VERIFY_TOKEN = "hungtranthanh0706";
         // Parse the query params
         let mode = req.query["hub.mode"];
         let token = req.query["hub.verify_token"];
@@ -138,7 +139,7 @@ class ZingController {
         // Send the HTTP request to the Messenger Platform
         request({
             "uri": "https://graph.facebook.com/v2.6/me/messages",
-            "qs": { "access_token": process.env.PAGE_ACCESS_TOKEN },
+            "qs": { "access_token": PAGE_ACCESS_TOKE },
             "method": "POST",
             "json": request_body
         }, (err, res, body) => {
