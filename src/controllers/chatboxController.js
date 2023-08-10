@@ -3,6 +3,7 @@ const request = require('request');
 const MY_VERIFY_TOKEN = process.env.MY_VERIFY_TOKEN;
 class ZingController {
     test = (req, res) => {
+        console.log("hung");
         return res.send("Hello again2");
     }
     getWebhook = (req, res) => {
